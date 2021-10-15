@@ -409,6 +409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceleration: 10
   maxSpeed: 10
+  controlRollFactor: 15
 --- !u!1 &3699488174588864179
 GameObject:
   m_ObjectHideFlags: 0

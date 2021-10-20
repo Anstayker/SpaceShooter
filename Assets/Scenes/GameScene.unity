@@ -154,6 +154,17 @@ Transform:
   m_Father: {fileID: 969465786}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!114 &175464400 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7727143273041145642, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
+  m_PrefabInstance: {fileID: 1128587089}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff792be8e849f449a77914f89f51f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &378147207
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +358,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
+--- !u!198 &862341397 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 747420972739763467, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
+  m_PrefabInstance: {fileID: 1128587089}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &947082149
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,9 +581,69 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 969465786}
     m_Modifications:
+    - target: {fileID: -1806941996543867076, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1806941996543867076, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: dcb01427-29f5-4a33-966a-da312a7dc13f
+      objectReference: {fileID: 0}
+    - target: {fileID: -1806941996543867076, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: Spaceship/Shoot[/Keyboard/space]
+      objectReference: {fileID: 0}
+    - target: {fileID: -1806941996543867076, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1806941996543867076, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1806941996543867076, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 175464400}
+    - target: {fileID: -1806941996543867076, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1806941996543867076, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnShoot
+      objectReference: {fileID: 0}
+    - target: {fileID: -1806941996543867076, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InputManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: -1806941996543867076, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 195922875580038991, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
+      propertyPath: _particleSystems.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 195922875580038991, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
+      propertyPath: _particleSystems.Array.data[0]
+      value: 
+      objectReference: {fileID: 862341397}
+    - target: {fileID: 195922875580038991, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
+      propertyPath: _particleSystems.Array.data[1]
+      value: 
+      objectReference: {fileID: 2050490200}
+    - target: {fileID: 747420972739763465, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 747420972739763467, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
       propertyPath: playOnAwake
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 747420972739763467, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3206259005778883939, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
       propertyPath: m_Constraints
@@ -635,7 +711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4053084333607703529, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
       propertyPath: playOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
@@ -1232,3 +1308,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010010311}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!198 &2050490200 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4053084333607703529, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
+  m_PrefabInstance: {fileID: 1128587089}
+  m_PrefabAsset: {fileID: 0}

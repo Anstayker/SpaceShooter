@@ -36,7 +36,6 @@ public class PlayerMovement : MonoBehaviour {
             yThrow * acceleration,
             0);
         
-        _rigidbody.AddForce(_movement);
         _rigidbody.velocity = _movement;
 
         if (_rigidbody.velocity.magnitude > maxSpeed) {

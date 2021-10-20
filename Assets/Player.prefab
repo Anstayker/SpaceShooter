@@ -300,6 +300,7 @@ GameObject:
   - component: {fileID: -1806941996543867076}
   - component: {fileID: 7727143273041145642}
   - component: {fileID: 3468607609228794710}
+  - component: {fileID: 195922875580038991}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -336,7 +337,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!114 &-1806941996543867076
 MonoBehaviour:
@@ -411,6 +412,18 @@ MonoBehaviour:
   acceleration: 10
   maxSpeed: 10
   controlRollFactor: 15
+--- !u!114 &195922875580038991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3699488174156700133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a081ac3b1499d344cb94467653733d2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3699488174588864179
 GameObject:
   m_ObjectHideFlags: 0

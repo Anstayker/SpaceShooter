@@ -10,7 +10,7 @@ public class InputManager : MonoBehaviour {
     
     private Vector2 _rawInputMovement;
     private PlayerShot _playerShot;
-    private bool _IsPlayerShooting = false;
+    private bool _isPlayerShooting = false;
     
     private void Awake() {
         _playerShot = gameObject.GetComponent<PlayerShot>();
@@ -24,9 +24,9 @@ public class InputManager : MonoBehaviour {
             0);
     }
 
-    public void OnShoot() {
-        _IsPlayerShooting = !_IsPlayerShooting;
-        _playerShot.ProcessShoot(_IsPlayerShooting);
+    public void OnShoot(InputAction.CallbackContext value) {
+        _isPlayerShooting = value.ReadValueAsButton();
+        _playerShot.ProcessShoot(_isPlayerShooting);
     }
 
 }

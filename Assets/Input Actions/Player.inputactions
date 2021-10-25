@@ -24,7 +24,7 @@
             ],
             "bindings": [
                 {
-                    "name": "Directions",
+                    "name": "Directions WASD",
                     "id": "61b38a4f-4daa-4410-bfbd-871211c56ac3",
                     "path": "2DVector",
                     "interactions": "",

@@ -6,17 +6,17 @@ using UnityEngine.SceneManagement;
 public class DestroyByContact : MonoBehaviour
 {
      [SerializeField] private float respawnDelay = 3.0f;
-     [SerializeField] private GameObject enemyMesh; 
+     [SerializeField] private GameObject playerMesh; 
    private void OnCollisionEnter(Collision other) {
-       if(other.gameObject.GetComponent<PlayerMovement>())
+       if(other.gameObject.GetComponent<Enemy>())
        {
             StartCoroutine(GameOver(other));
        }
     }
-    private IEnumerator GameOver(Collision player)
+    private IEnumerator GameOver(Collision enemy)
     {
-        player.gameObject.SetActive(false);
-        enemyMesh.SetActive(false);
+        enemy.gameObject.SetActive(false);
+        playerMesh.SetActive(false);
         yield return new WaitForSeconds(respawnDelay);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);        
     }

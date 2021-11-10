@@ -25,7 +25,7 @@ public class EnemySpawner : MonoBehaviour {
             GameObject newEnemy = Instantiate(enemy, transform.position, transform.rotation);
             newEnemy.GetComponent<EnemyMovement>().path = waypoints;
             enemyCount++;
-            yield return new WaitForSeconds(waitTime);
+            yield return new WaitForSeconds(waitTime);    
         }
 
     }
@@ -40,7 +40,6 @@ public class EnemySpawner : MonoBehaviour {
         newEmptyObject.transform.position = this.transform.position;
         newEmptyObject.transform.parent = this.transform;
         waypoints.Add(newEmptyObject);
-        //return Instantiate(enemy, transform.position, Quaternion.identity);
     }
 
     private void OnDrawGizmos() {

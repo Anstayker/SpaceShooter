@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class PlayerShot : MonoBehaviour {
     
-    [SerializeField] ParticleSystem[] _particleSystems;
+    [SerializeField] ParticleSystem[] particleSystems;
 
     public void ProcessShoot(bool isShooting) {
-        foreach (ParticleSystem gun in _particleSystems) {
+        foreach (ParticleSystem gun in particleSystems) {
             if (isShooting)
                 gun.Play();
             else

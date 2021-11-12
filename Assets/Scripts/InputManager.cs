@@ -11,9 +11,12 @@ public class InputManager : MonoBehaviour {
     private Vector2 _rawInputMovement;
     private PlayerShot _playerShot;
     private bool _isPlayerShooting = false;
-    
+    private bool backspace;
+    private Pause _pause;
+
     private void Awake() {
         _playerShot = gameObject.GetComponent<PlayerShot>();
+        _pause=gameObject.GetComponent<Pause>();
     }
 
     public void OnMovement(InputAction.CallbackContext value) {
@@ -28,5 +31,11 @@ public class InputManager : MonoBehaviour {
         _isPlayerShooting = value.ReadValueAsButton();
         _playerShot.ProcessShoot(_isPlayerShooting);
     }
+
+    public void OnPause(InputAction.CallbackContext value){
+	backspace=value.ReadValueAsButton();
+	
+	_pause.InPause(backspace);
+	}
 
 }

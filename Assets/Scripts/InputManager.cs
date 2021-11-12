@@ -11,7 +11,8 @@ public class InputManager : MonoBehaviour {
     private Vector2 _rawInputMovement;
     private PlayerShot _playerShot;
     private bool _isPlayerShooting = false;
-    
+    [SerializeField] private Pause pause;
+
     private void Awake() {
         _playerShot = gameObject.GetComponent<PlayerShot>();
     }
@@ -28,5 +29,9 @@ public class InputManager : MonoBehaviour {
         _isPlayerShooting = value.ReadValueAsButton();
         _playerShot.ProcessShoot(_isPlayerShooting);
     }
+
+    public void OnPause(InputAction.CallbackContext value){
+        pause.InPause(value.performed);
+	}
 
 }

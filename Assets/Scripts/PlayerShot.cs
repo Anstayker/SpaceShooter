@@ -12,6 +12,7 @@ public class PlayerShot : MonoBehaviour {
             if (isShooting)
                 gun.Play();
             else
+                //Debug.Log("Me detengo");
                 gun.Stop();
         }
     }

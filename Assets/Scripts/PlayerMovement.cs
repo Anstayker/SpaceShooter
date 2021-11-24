@@ -3,6 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class Boundary{
+    public float xMin, xMax, yMin, yMax;
+}
+
+
 public class PlayerMovement : MonoBehaviour {
     
     [Header("Movement")]
@@ -17,6 +23,7 @@ public class PlayerMovement : MonoBehaviour {
     private Rigidbody _rigidbody;
     private InputManager _playerInput;
     private Vector3 _movement;
+    public Boundary boundary;
 
     private void Start() {
         _rigidbody = GetComponent<Rigidbody>();
@@ -26,6 +33,7 @@ public class PlayerMovement : MonoBehaviour {
     private void FixedUpdate() {
         ProcessMovement(_playerInput.InputMovement);
         ProcessRotation();
+        _rigidbody.position = new Vector3(Mathf.Clamp(_rigidbody.position.x, boundary.xMin, boundary.xMax), Mathf.Clamp(_rigidbody.position.y, boundary.yMin, boundary.yMax), 0f);
     }
 
     private void ProcessMovement(Vector3 inputMovement) {

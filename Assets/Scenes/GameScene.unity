@@ -1494,11 +1494,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5790797604721994310, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
       propertyPath: maxSpeed
-      value: 150
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5790797604721994310, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
       propertyPath: acceleration
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5790797604721994310, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
+      propertyPath: boundary.xMax
+      value: 91
+      objectReference: {fileID: 0}
+    - target: {fileID: 5790797604721994310, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
+      propertyPath: boundary.xMin
+      value: -89
+      objectReference: {fileID: 0}
+    - target: {fileID: 5790797604721994310, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
+      propertyPath: boundary.yMax
+      value: 43
+      objectReference: {fileID: 0}
+    - target: {fileID: 5790797604721994310, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
+      propertyPath: boundary.yMin
+      value: -46
       objectReference: {fileID: 0}
     - target: {fileID: 5790797605542049956, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
       propertyPath: m_RootOrder

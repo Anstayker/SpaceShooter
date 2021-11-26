@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour {
     [Header("Rotation")] 
     [SerializeField] private float controlRollFactor = 20.0f;
 
+    [SerializeField] private Camera mainCamera;
+    
     private float xThrow = 0.0f, yThrow = 0.0f;
     
     private Rigidbody _rigidbody;
@@ -33,7 +35,7 @@ public class PlayerMovement : MonoBehaviour {
     private void FixedUpdate() {
         ProcessMovement(_playerInput.InputMovement);
         ProcessRotation();
-        _rigidbody.position = new Vector3(Mathf.Clamp(_rigidbody.position.x, boundary.xMin, boundary.xMax), Mathf.Clamp(_rigidbody.position.y, boundary.yMin, boundary.yMax), 0f);
+        ProcessBoundary();
     }
 
     private void ProcessMovement(Vector3 inputMovement) {
@@ -52,9 +54,15 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void ProcessRotation() {
-        
         float roll = -xThrow * controlRollFactor;
         transform.localRotation = Quaternion.Euler(0, roll, 0);
-        
     }
+
+    private void ProcessBoundary() {
+        Vector3 cameraPosition = mainCamera.transform.position;
+        float processedYMin = cameraPosition.y + boundary.yMin;
+        float processedYMax = cameraPosition.y + boundary.yMax;
+        _rigidbody.position = new Vector3(Mathf.Clamp(_rigidbody.position.x, boundary.xMin, boundary.xMax), Mathf.Clamp(_rigidbody.position.y, processedYMin, processedYMax), 0f);
+    }
+
 }

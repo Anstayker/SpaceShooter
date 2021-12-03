@@ -124,6 +124,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: dcb01427-29f5-4a33-966a-da312a7dc13f
     m_ActionName: Spaceship/Shoot[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1c4d6189-4483-448a-8050-3d46016ca7bd
+    m_ActionName: Spaceship/Pause[/Keyboard/backspace]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Spaceship
@@ -141,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff792be8e849f449a77914f89f51f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pause: {fileID: 0}
 --- !u!114 &5790797604721994310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +161,12 @@ MonoBehaviour:
   acceleration: 15
   maxSpeed: 20
   controlRollFactor: 15
+  mainCamera: {fileID: 0}
+  boundary:
+    xMin: 0
+    xMax: 0
+    yMin: 0
+    yMax: 0
 --- !u!114 &5790797604721994311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,6 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnDelay: 3
   playerMesh: {fileID: 3046541528808552519}
+  explosionPrefab: {fileID: 8236553918722499248, guid: 4119cd8f09a00bb46ab66c33d444b10c, type: 3}
 --- !u!1001 &2775928970595976470
 PrefabInstance:
   m_ObjectHideFlags: 0

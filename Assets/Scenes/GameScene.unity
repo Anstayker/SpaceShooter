@@ -394,7 +394,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff792be8e849f449a77914f89f51f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
- musica_o_soundtrack_del_juego
 --- !u!1 &450045742
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,13 +534,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-
 --- !u!4 &456941215 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7870836691807957784, guid: e836bc10b8daa4446866557c07e80f56, type: 3}
   m_PrefabInstance: {fileID: 1677492690}
   m_PrefabAsset: {fileID: 0}
- main
 --- !u!4 &533760911 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5790797605542049956, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
@@ -2261,6 +2258,10 @@ PrefabInstance:
       propertyPath: pause
       value: 
       objectReference: {fileID: 385431515}
+    - target: {fileID: 7690735547709569677, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9047896010323075397, guid: eb14a71088076c044ae66ff78a8064bd, type: 3}
       propertyPath: m_Size.x
       value: 20
@@ -2290,6 +2291,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 969465786}
     m_Modifications:
+    - target: {fileID: 311906178318912078, guid: e836bc10b8daa4446866557c07e80f56, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909474121148528059, guid: e836bc10b8daa4446866557c07e80f56, type: 3}
+      propertyPath: m_Volume
+      value: 0.781
+      objectReference: {fileID: 0}
     - target: {fileID: 7861708602921422307, guid: e836bc10b8daa4446866557c07e80f56, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2345,4 +2354,5 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1254429669822290422, guid: e836bc10b8daa4446866557c07e80f56, type: 3}
     - {fileID: 167759890208412223, guid: e836bc10b8daa4446866557c07e80f56, type: 3}
+    - {fileID: 5909474121148528059, guid: e836bc10b8daa4446866557c07e80f56, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e836bc10b8daa4446866557c07e80f56, type: 3}

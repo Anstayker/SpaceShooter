@@ -6,37 +6,34 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
     
-    [SerializeField] private float respawnDelay = 3.0f;
+    public float respawnDelay = 3.0f;
     [SerializeField] private GameObject playerMesh;
 
     private Collider _playerCollider;
     private const String EnemyTag = "Enemy";
+
+    private GameManager _gameManager;
     
     private void Start() {
+        _gameManager = FindObjectOfType<GameManager>();
         _playerCollider = gameObject.GetComponent<Collider>();
     }
 
     private void OnCollisionEnter(Collision other) {
        if(other.gameObject.GetComponent<Enemy>()) {
            DestroyEnemyOnContact(other);
-            StartCoroutine(GameOver());
+           _gameManager.ChangeState(_gameManager.gameOverState);
        }
     }
 
    private void OnParticleCollision(GameObject other) {
        if (other.gameObject.CompareTag(EnemyTag)) {
-           StartCoroutine(GameOver());
+           _gameManager.ChangeState(_gameManager.gameOverState);
        }
    }
 
    private void DestroyEnemyOnContact(Collision enemy) {
        enemy.gameObject.SetActive(false);
    }
-
-   private IEnumerator GameOver() {
-        playerMesh.SetActive(false);
-        _playerCollider.enabled = false;
-        yield return new WaitForSeconds(respawnDelay);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);        
-    }
+   
 }

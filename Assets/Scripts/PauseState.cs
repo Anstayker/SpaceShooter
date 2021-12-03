@@ -1,11 +1,17 @@
 ﻿
 public class PauseState : State {
 
+    private Pause _pause;
+    private bool _isGamePaused;
+    
     public PauseState(GameManager gameManager) : base(gameManager) {
+        _pause = ((GameManager) StateMachine).pause;
+        _isGamePaused = false;
     }
 
     public override void Enter() {
-        //TODO controlar que empieza la pausa
+        _isGamePaused = true;
+        _pause.InPause(_isGamePaused);
     }
 
     public override void UpdateLogic() {
@@ -13,6 +19,7 @@ public class PauseState : State {
     }
 
     public override void Exit() {
-        //TODO regresar todo a la normalidad
+        _isGamePaused = false;
+        _pause.InPause(_isGamePaused);
     }
 }

@@ -9,10 +9,17 @@ public class GameManager : StateMachine {
     [HideInInspector] public PauseState pauseState;
     [HideInInspector] public GameOverState gameOverState;
 
+    public Pause pause;
+    public GameObject player;
+
+    [HideInInspector] public PlayerHealth playerHealth;
+
     private void Awake() {
         playingState = new PlayingState(this);
         pauseState = new PauseState(this);
         gameOverState = new GameOverState(this);
+
+        playerHealth = player.GetComponent<PlayerHealth>();
     }
 
     protected override State GetInitialState() {

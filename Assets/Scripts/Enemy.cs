@@ -7,7 +7,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
     private GameObject _explosion;
-    [SerializeField] private enemyHealth = 1.0f;
+    [SerializeField] private float enemyHealth = 1.0f;
     public GameObject explosionPrefab;
   
     private void OnParticleCollision(GameObject other) {

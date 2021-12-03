@@ -36,7 +36,6 @@ public class PlayerHealth : MonoBehaviour {
        if (other.gameObject.CompareTag(EnemyTag)) {
            isPlayerAlive = false;
            Destroy(_explosion, 2);
-           StartCoroutine(GameOver());
        }
    }
 

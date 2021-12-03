@@ -65,8 +65,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 18.09, y: 24.26, z: 9.68}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 20, y: 20, z: 10}
+  m_Center: {x: 0, y: 3, z: 1}
 --- !u!114 &5790797604721994309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff792be8e849f449a77914f89f51f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pause: {fileID: 0}
+  isGamePaused: 0
 --- !u!114 &5790797604721994310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a081ac3b1499d344cb94467653733d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _durationShot: 5
   particleSystems:
   - {fileID: 5790797606140705342}
   - {fileID: 300808546945295217}
@@ -199,6 +200,7 @@ MonoBehaviour:
   respawnDelay: 3
   playerMesh: {fileID: 3046541528808552519}
   explosionPrefab: {fileID: 8236553918722499248, guid: 4119cd8f09a00bb46ab66c33d444b10c, type: 3}
+  isPlayerAlive: 1
 --- !u!1001 &1272410042491508496
 PrefabInstance:
   m_ObjectHideFlags: 0

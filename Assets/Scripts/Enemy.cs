@@ -4,8 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
+  [SerializeField] private int life;
+
     private void OnParticleCollision(GameObject other) {
-        Destroy(gameObject);
+	life--;
+
+	if(life<0){
+        	Destroy(gameObject);
+	}
     }
-    
 }

@@ -18,10 +18,12 @@ public class PauseState : State {
 
     public override void UpdateLogic() {
         if (!_inputManager.isGamePaused) {
-            _isGamePaused = false;
-            _pause.InPause(_isGamePaused);
             StateMachine.ChangeState(((GameManager) StateMachine).playingState);
         }
     }
 
+    public override void Exit() {
+        _isGamePaused = false;
+        _pause.InPause(_isGamePaused);
+    }
 }

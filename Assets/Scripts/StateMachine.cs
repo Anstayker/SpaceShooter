@@ -26,4 +26,5 @@ public class StateMachine : MonoBehaviour {
     protected virtual State GetInitialState() {
         return null;
     }
+    
 }

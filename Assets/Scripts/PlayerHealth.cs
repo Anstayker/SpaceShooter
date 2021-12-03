@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour {
     private const String EnemyTag = "Enemy";
 
     private GameManager _gameManager;
+    [HideInInspector] public bool isPlayerAlive = true;
     
     private void Start() {
         _gameManager = FindObjectOfType<GameManager>();
@@ -22,13 +23,13 @@ public class PlayerHealth : MonoBehaviour {
     private void OnCollisionEnter(Collision other) {
        if(other.gameObject.GetComponent<Enemy>()) {
            DestroyEnemyOnContact(other);
-           _gameManager.ChangeState(_gameManager.gameOverState);
+           isPlayerAlive = false;
        }
     }
 
    private void OnParticleCollision(GameObject other) {
        if (other.gameObject.CompareTag(EnemyTag)) {
-           _gameManager.ChangeState(_gameManager.gameOverState);
+           isPlayerAlive = false;
        }
    }
 

@@ -3,14 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour {
+public class Enemy : MonoBehaviour { 
   [SerializeField] private int life;
+ 
 
     private void OnParticleCollision(GameObject other) {
-	life--;
+	    life--;
 
-	if(life<0){
+	    if(life<0) {
         	Destroy(gameObject);
-	}
+	    }
     }
 }

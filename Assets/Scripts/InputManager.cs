@@ -34,4 +34,5 @@ public class InputManager : MonoBehaviour {
         pause.InPause(value.performed);
 	}
 
+    
 }

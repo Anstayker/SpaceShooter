@@ -10,4 +10,7 @@ public class ControlIU : MonoBehaviour {
 		Debug.Log("Cerrar aplicacion");
 		Application.Quit();
     }
+ 
+      
+
 }

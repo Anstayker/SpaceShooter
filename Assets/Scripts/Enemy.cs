@@ -7,12 +7,15 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
     private GameObject _explosion;
+    [SerializeField] private enemyHealth = 1.0f;
     public GameObject explosionPrefab;
+  
     private void OnParticleCollision(GameObject other) {
-       _explosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
-       Destroy(_explosion, 2);       
-       Destroy(gameObject);
-       
+      enemyHealth--;
+      if(enemyHealth <= 0) {
+          _explosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
+          Destroy(_explosion, 2);       
+          Destroy(gameObject);         
+       }
     }
-    
 }

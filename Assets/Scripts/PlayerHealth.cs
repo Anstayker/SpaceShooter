@@ -6,15 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
     
-    [SerializeField] private float respawnDelay = 3.0f;
+    public float respawnDelay = 3.0f;
     [SerializeField] private GameObject playerMesh;
     private GameObject _explosion;
     public GameObject explosionPrefab;
 
     private Collider _playerCollider;
     private const String EnemyTag = "Enemy";
+
+    private GameManager _gameManager;
+    [HideInInspector] public bool isPlayerAlive = true;
     
     private void Start() {
+        _gameManager = FindObjectOfType<GameManager>();
         _playerCollider = gameObject.GetComponent<Collider>();
     }
 
@@ -23,13 +27,14 @@ public class PlayerHealth : MonoBehaviour {
        if(other.gameObject.GetComponent<Enemy>()) {
            Destroy(_explosion, 2);
            DestroyEnemyOnContact(other);
-            StartCoroutine(GameOver());
+           isPlayerAlive = false;
        }
     }
 
    private void OnParticleCollision(GameObject other) {
        _explosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
        if (other.gameObject.CompareTag(EnemyTag)) {
+           isPlayerAlive = false;
            Destroy(_explosion, 2);
            StartCoroutine(GameOver());
        }
@@ -38,11 +43,5 @@ public class PlayerHealth : MonoBehaviour {
    private void DestroyEnemyOnContact(Collision enemy) {
        enemy.gameObject.SetActive(false);
    }
-
-   private IEnumerator GameOver() {
-        playerMesh.SetActive(false);
-        _playerCollider.enabled = false;
-        yield return new WaitForSeconds(respawnDelay);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);        
-    }
+   
 }

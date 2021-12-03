@@ -13,14 +13,18 @@ public class EnemyShot : MonoBehaviour {
     [SerializeField] private ParticleSystem[] enemyGuns;
     
     private bool _isShooting = false;
+    private AudioSource _audioSource;
 
+    void Start() {
+       _audioSource = GetComponent<AudioSource>(); 
+    }
     private void Update() {
         StartShooting();
     }
 
     private void StartShooting() {
         if (_isShooting) return;
-        StartCoroutine(ShootRoutine());
+        StartCoroutine(ShootRoutine());        
     }
 
     private IEnumerator ShootRoutine() {
@@ -30,6 +34,7 @@ public class EnemyShot : MonoBehaviour {
         yield return new WaitForSeconds(startDelay);
 
         for (int i = 0; i < bulletsPerShot; i++) {
+            _audioSource.Play();
             foreach (ParticleSystem gun in enemyGuns) {
                 gun.Emit(1);
             }

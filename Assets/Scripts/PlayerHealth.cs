@@ -8,6 +8,8 @@ public class PlayerHealth : MonoBehaviour {
     
     [SerializeField] private float respawnDelay = 3.0f;
     [SerializeField] private GameObject playerMesh;
+    private GameObject _explosion;
+    public GameObject explosionPrefab;
 
     private Collider _playerCollider;
     private const String EnemyTag = "Enemy";
@@ -17,14 +19,18 @@ public class PlayerHealth : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision other) {
+        _explosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
        if(other.gameObject.GetComponent<Enemy>()) {
+           Destroy(_explosion, 2);
            DestroyEnemyOnContact(other);
             StartCoroutine(GameOver());
        }
     }
 
    private void OnParticleCollision(GameObject other) {
+       _explosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
        if (other.gameObject.CompareTag(EnemyTag)) {
+           Destroy(_explosion, 2);
            StartCoroutine(GameOver());
        }
    }

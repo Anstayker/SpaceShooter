@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour {
 
     [SerializeField] private Camera mainCamera;
     
-    private float xThrow = 0.0f, yThrow = 0.0f;
+    private float _xThrow = 0.0f, _yThrow = 0.0f;
     
     private Rigidbody _rigidbody;
     private InputManager _playerInput;
@@ -39,11 +39,11 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void ProcessMovement(Vector3 inputMovement) {
-        xThrow = inputMovement.x;
-        yThrow = inputMovement.y;
+        _xThrow = inputMovement.x;
+        _yThrow = inputMovement.y;
         _movement = new Vector3(
-            xThrow * acceleration,
-            yThrow * acceleration,
+            _xThrow * acceleration,
+            _yThrow * acceleration,
             0);
         
         _rigidbody.velocity = _movement;
@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void ProcessRotation() {
-        float roll = -xThrow * controlRollFactor;
+        float roll = -_xThrow * controlRollFactor;
         transform.localRotation = Quaternion.Euler(0, roll, 0);
     }
 

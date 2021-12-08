@@ -11,26 +11,29 @@ public class EnemyMovement : MonoBehaviour {
     [SerializeField] private float movementPrecision = 10.0f;
     
     private Rigidbody _rigidbody;
-    [SerializeField] private int _waypointIndex = 0;
-    [SerializeField] private Transform _currentWaypoint;
+    [SerializeField] private int waypointIndex = 0;
+    [SerializeField] private Transform currentWaypoint;
     
     private void Start() {
         _rigidbody = GetComponent<Rigidbody>();
-        _currentWaypoint = path[_waypointIndex].transform;
+        currentWaypoint = path[waypointIndex].transform;
     }
 
     private void FixedUpdate() {
-        if (Vector3.Distance(transform.position, _currentWaypoint.position) < movementPrecision) {
-            if ((_waypointIndex + 1) < path.Count) {
-                _currentWaypoint = path[_waypointIndex + 1].transform;
-                _waypointIndex++;
+        moveEnemy();
+    }
+    private void moveEnemy() {
+        if (Vector3.Distance(transform.position, currentWaypoint.position) < movementPrecision) {
+            if ((waypointIndex + 1) < path.Count) {
+                currentWaypoint = path[waypointIndex + 1].transform;
+                waypointIndex++;
             }
             else {
                 Destroy(gameObject);
             }
         }
         else {
-            _rigidbody.velocity = (_currentWaypoint.position - transform.position).normalized * movementSpeed;
+            _rigidbody.velocity = (currentWaypoint.position - transform.position).normalized * movementSpeed;
         }
     }
 }

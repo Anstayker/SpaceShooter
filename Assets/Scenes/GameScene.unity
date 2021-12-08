@@ -170,6 +170,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 477488387}
     m_Modifications:
+    - target: {fileID: 1069349923850366245, guid: e6862f958893ee44ea10d4ef9d9e554a, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3210429739485331971, guid: e6862f958893ee44ea10d4ef9d9e554a, type: 3}
       propertyPath: m_Name
       value: Torreta
@@ -861,6 +865,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 477488387}
     m_Modifications:
+    - target: {fileID: 1069349923850366245, guid: e6862f958893ee44ea10d4ef9d9e554a, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3210429739485331971, guid: e6862f958893ee44ea10d4ef9d9e554a, type: 3}
       propertyPath: m_Name
       value: Torreta (1)

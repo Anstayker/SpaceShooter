@@ -9,9 +9,7 @@ public class Pause : MonoBehaviour {
 	void Awake() {
 		gameObject.SetActive(false);
     }
-
-   
-
+	
    public void InPause (bool value) {
 	   if(value) {
 		   _active = !_active;
@@ -19,13 +17,5 @@ public class Pause : MonoBehaviour {
 		   Time.timeScale = (_active) ? 0 : 1f;
 	   }
    } 
-
-   public void OffPause () {
-	   
-		   gameObject.SetActive(false);
-		   Time.timeScale = 1f;
-	   
-   }
- 
    
 }

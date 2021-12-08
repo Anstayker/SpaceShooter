@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MusicManager : MonoBehaviour {
+    
     void Awake() {
-        MusicManager[] objs = GameObject.FindObjectsOfType<MusicManager>();
-        if (objs.Length > 1) {
-            Destroy(this.gameObject);
+        MusicManager[] objects = FindObjectsOfType<MusicManager>();
+        if (objects.Length > 1) {
+            Destroy(gameObject);
         }
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(gameObject);
     }
+    
 }

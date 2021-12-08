@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeteorMovement : MonoBehaviour
-{
+public class MeteorMovement : MonoBehaviour {
+    
     [SerializeField] private GameObject enemy;
     [SerializeField] private float startDelayTime = 1.0f;
     [SerializeField] private float spawnDelayTime = 3.0f;

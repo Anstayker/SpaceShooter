@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        ProcessMovement(_playerInput.InputMovement);
+        ProcessMovement(_playerInput.inputMovement);
         ProcessRotation();
         ProcessBoundary();
     }

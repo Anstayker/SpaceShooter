@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 1
-  explosionPrefab: {fileID: 8236553918722499248, guid: 4119cd8f09a00bb46ab66c33d444b10c, type: 3}
+  explosionPrefab: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
 --- !u!114 &1254429669822290422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,8 +95,8 @@ MonoBehaviour:
   path: []
   movementSpeed: 60
   movementPrecision: 10
-  _waypointIndex: 0
-  _currentWaypoint: {fileID: 0}
+  waypointIndex: 0
+  currentWaypoint: {fileID: 0}
 --- !u!114 &167759890208412223
 MonoBehaviour:
   m_ObjectHideFlags: 0

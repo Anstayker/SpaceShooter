@@ -9,13 +9,11 @@ public class CameraMovement : MonoBehaviour {
     [SerializeField] private GameObject cameraLimit;
 
     private Vector3 _cameraLimitPosition;
-    private GameManager _gameManager;
-    
+
     [HideInInspector] public bool winGame = false;
     
     private void Start() {
-        _gameManager = FindObjectOfType<GameManager>();
-        _cameraLimitPosition = cameraLimit.transform.position;
+        _cameraLimitPosition = cameraLimit.transform.localPosition;
     }
 
     private void Update() {
@@ -23,8 +21,8 @@ public class CameraMovement : MonoBehaviour {
     }
 
     private void ProcessMovement() {
-        if (transform.position.y <= _cameraLimitPosition.y) {
-            transform.Translate(Vector3.up * Time.deltaTime * movementSpeed);
+        if (transform.position.z <= _cameraLimitPosition.y) {
+            transform.Translate(Vector3.up * (Time.deltaTime * movementSpeed));
         }
         else {
             winGame = true;

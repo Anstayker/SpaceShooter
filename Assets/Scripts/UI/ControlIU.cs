@@ -15,6 +15,7 @@ public class ControlIU : MonoBehaviour {
         public void RestartGame() {
 		Debug.Log("Reiniciar aplicacion");
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		Time.timeScale = 1f;
    }
  
       

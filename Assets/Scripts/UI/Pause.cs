@@ -17,5 +17,12 @@ public class Pause : MonoBehaviour {
 		   Time.timeScale = (_active) ? 0 : 1f;
 	   }
    } 
+
+   public void OffPause () {
+	   
+		   gameObject.SetActive(false);
+		   Time.timeScale = 1f;
+	   
+   }
    
 }

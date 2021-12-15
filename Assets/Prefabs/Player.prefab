@@ -198,8 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnDelay: 3
-  playerMesh: {fileID: 3046541528808552519}
-  explosionPrefab: {fileID: 8236553918722499248, guid: 4119cd8f09a00bb46ab66c33d444b10c, type: 3}
+  explosionPrefab: {fileID: 4794043405585894037, guid: 37138c0c33167b04fa1fb90b7f5a794f, type: 3}
   isPlayerAlive: 1
 --- !u!1001 &1272410042491508496
 PrefabInstance:
@@ -360,11 +359,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1295fe66fec0ea4b9f00d255139454b, type: 3}
---- !u!1 &3046541528808552519 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c1295fe66fec0ea4b9f00d255139454b, type: 3}
-  m_PrefabInstance: {fileID: 2775928970595976470}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2381469401245000445 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c1295fe66fec0ea4b9f00d255139454b, type: 3}

@@ -237,7 +237,7 @@ PrefabInstance:
     - target: {fileID: 9019925297325435863, guid: e6862f958893ee44ea10d4ef9d9e554a, type: 3}
       propertyPath: explosionPrefab
       value: 
-      objectReference: {fileID: 8236553918722499248, guid: 4119cd8f09a00bb46ab66c33d444b10c, type: 3}
+      objectReference: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6862f958893ee44ea10d4ef9d9e554a, type: 3}
 --- !u!1001 &294178199
@@ -932,7 +932,7 @@ PrefabInstance:
     - target: {fileID: 9019925297325435863, guid: e6862f958893ee44ea10d4ef9d9e554a, type: 3}
       propertyPath: explosionPrefab
       value: 
-      objectReference: {fileID: 8236553918722499248, guid: 4119cd8f09a00bb46ab66c33d444b10c, type: 3}
+      objectReference: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6862f958893ee44ea10d4ef9d9e554a, type: 3}
 --- !u!20 &963194227 stripped
@@ -2612,6 +2612,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 7870836692146159792, guid: e836bc10b8daa4446866557c07e80f56, type: 3}
+      propertyPath: explosionPrefab
+      value: 
+      objectReference: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
     - target: {fileID: 7870836692146159795, guid: e836bc10b8daa4446866557c07e80f56, type: 3}
       propertyPath: m_Name
       value: SpaceShip

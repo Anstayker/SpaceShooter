@@ -60,9 +60,13 @@ public class PlayerMovement : MonoBehaviour {
 
     private void ProcessBoundary() {
         Vector3 cameraPosition = mainCamera.transform.position;
-        float processedYMin = cameraPosition.z + boundary.zMin;
-        float processedYMax = cameraPosition.z + boundary.zMax;
-        //_rigidbody.position = new Vector3(Mathf.Clamp(_rigidbody.position.x, boundary.xMin, boundary.xMax), 0f, Mathf.Clamp(_rigidbody.position.y, processedYMin, processedYMax));
+        float processedZMin = boundary.zMin + cameraPosition.z;
+        float processedZMax = boundary.zMax + cameraPosition.z;
+        
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x, boundary.xMin, boundary.xMax),
+            20.0f,
+            Mathf.Clamp(transform.position.z, processedZMin, processedZMax));
     }
 
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 [System.Serializable]
 public class Boundary{
-    public float xMin, xMax, yMin, yMax;
+    public float xMin, xMax, zMin, zMax;
 }
 
 
@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour {
 
     [SerializeField] private Camera mainCamera;
     
-    private float _xThrow = 0.0f, _yThrow = 0.0f;
+    private float _xThrow = 0.0f, _zThrow = 0.0f;
     
     private Rigidbody _rigidbody;
     private InputManager _playerInput;
@@ -40,11 +40,11 @@ public class PlayerMovement : MonoBehaviour {
 
     private void ProcessMovement(Vector3 inputMovement) {
         _xThrow = inputMovement.x;
-        _yThrow = inputMovement.y;
+        _zThrow = inputMovement.y;
         _movement = new Vector3(
             _xThrow * acceleration,
-            _yThrow * acceleration,
-            0);
+            0,
+            _zThrow * acceleration);
         
         _rigidbody.velocity = _movement;
 
@@ -55,14 +55,18 @@ public class PlayerMovement : MonoBehaviour {
 
     private void ProcessRotation() {
         float roll = -_xThrow * controlRollFactor;
-        transform.localRotation = Quaternion.Euler(0, roll, 0);
+        transform.localRotation = Quaternion.Euler(0, 0, roll);
     }
 
     private void ProcessBoundary() {
         Vector3 cameraPosition = mainCamera.transform.position;
-        float processedYMin = cameraPosition.y + boundary.yMin;
-        float processedYMax = cameraPosition.y + boundary.yMax;
-        _rigidbody.position = new Vector3(Mathf.Clamp(_rigidbody.position.x, boundary.xMin, boundary.xMax), Mathf.Clamp(_rigidbody.position.y, processedYMin, processedYMax), 0f);
+        float processedZMin = boundary.zMin + cameraPosition.z;
+        float processedZMax = boundary.zMax + cameraPosition.z;
+        
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x, boundary.xMin, boundary.xMax),
+            20.0f,
+            Mathf.Clamp(transform.position.z, processedZMin, processedZMax));
     }
 
 }

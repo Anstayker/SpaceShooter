@@ -14,17 +14,17 @@ public class PlayerHealth : MonoBehaviour {
     [HideInInspector] public bool isPlayerAlive = true;
     
     private void OnCollisionEnter(Collision other) {
-        _explosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
-       if(other.gameObject.GetComponent<Enemy>()) {
-           Destroy(_explosion, 2);
-           DestroyEnemyOnContact(other);
-           isPlayerAlive = false;
-       }
+        if(other.gameObject.GetComponent<Enemy>()) { 
+            _explosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
+            Destroy(_explosion, 2);
+            DestroyEnemyOnContact(other); 
+            isPlayerAlive = false; 
+        }
     }
 
    private void OnParticleCollision(GameObject other) {
-       _explosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
        if (other.gameObject.CompareTag(EnemyTag)) {
+           _explosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
            isPlayerAlive = false;
            Destroy(_explosion, 2);
        }

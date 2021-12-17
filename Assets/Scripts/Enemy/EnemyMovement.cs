@@ -20,9 +20,9 @@ public class EnemyMovement : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        moveEnemy();
+        MoveEnemy();
     }
-    private void moveEnemy() {
+    private void MoveEnemy() {
         if (Vector3.Distance(transform.position, currentWaypoint.position) < movementPrecision) {
             if ((waypointIndex + 1) < path.Count) {
                 currentWaypoint = path[waypointIndex + 1].transform;

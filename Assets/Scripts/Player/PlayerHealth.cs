@@ -31,6 +31,7 @@ public class PlayerHealth : MonoBehaviour {
    }
 
    private void DestroyEnemyOnContact(Collision enemy) {
+       Instantiate(explosionPrefab, enemy.transform.position, enemy.transform.rotation);
        enemy.gameObject.SetActive(false);
    }
    

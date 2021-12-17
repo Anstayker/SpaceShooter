@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4799504103774076066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43.55111, y: 202.7, z: -0.3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4977034975337980461}
@@ -49,7 +49,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!136 &4799504103774076067
 CapsuleCollider:
@@ -94,8 +94,8 @@ MonoBehaviour:
   path: []
   movementSpeed: 20
   movementPrecision: 10
-  _waypointIndex: 0
-  _currentWaypoint: {fileID: 0}
+  waypointIndex: 0
+  currentWaypoint: {fileID: 0}
 --- !u!1001 &4799504103800194502
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class Boundary{
@@ -21,6 +22,9 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField] private Camera mainCamera;
     
     private float _xThrow = 0.0f, _zThrow = 0.0f;
+
+    public Text score;
+    public int contador;
     
     private Rigidbody _rigidbody;
     private InputManager _playerInput;
@@ -30,6 +34,8 @@ public class PlayerMovement : MonoBehaviour {
     private void Start() {
         _rigidbody = GetComponent<Rigidbody>();
         _playerInput = GetComponent<InputManager>();
+        contador=0;
+	score.text = "Score: " + contador;
     }
 
     private void FixedUpdate() {

@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour {
   
     private void OnParticleCollision(GameObject other) {
       enemyHealth--;
+      contador = contador + 1 ;
+      puntuacion.text= "Score: " +contador;
       if(enemyHealth <= 0) {
           _explosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
           Destroy(_explosion, 2);       

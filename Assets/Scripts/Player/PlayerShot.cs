@@ -15,7 +15,7 @@ public class PlayerShot : MonoBehaviour {
 
     public void ProcessShoot(bool isShooting) {
         foreach (ParticleSystem gun in particleSystems) {
-            if (isShooting && gun.gameObject.activeSelf) {
+            if (isShooting) {
                 gun.Play();
                 _audioSource.loop = true;
                 _audioSource.Play();

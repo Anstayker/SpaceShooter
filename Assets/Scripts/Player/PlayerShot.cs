@@ -9,16 +9,13 @@ public class PlayerShot : MonoBehaviour {
     [SerializeField] ParticleSystem[] particleSystems;
     private AudioSource _audioSource;
   
-    void Start() {
-        foreach (ParticleSystem gun in particleSystems) {            
-            _audioSource = gun.GetComponent<AudioSource>();
-        }
-        
+    void Start() {                   
+            _audioSource = GetComponent<AudioSource>();        
     }
 
     public void ProcessShoot(bool isShooting) {
         foreach (ParticleSystem gun in particleSystems) {
-            if (isShooting) {
+            if (isShooting && gun.gameObject.activeSelf) {
                 gun.Play();
                 _audioSource.loop = true;
                 _audioSource.Play();

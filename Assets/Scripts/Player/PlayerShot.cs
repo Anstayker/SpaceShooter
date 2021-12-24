@@ -9,11 +9,8 @@ public class PlayerShot : MonoBehaviour {
     [SerializeField] ParticleSystem[] particleSystems;
     private AudioSource _audioSource;
   
-    void Start() {
-        foreach (ParticleSystem gun in particleSystems) {            
-            _audioSource = gun.GetComponent<AudioSource>();
-        }
-        
+    void Start() {                   
+            _audioSource = GetComponent<AudioSource>();        
     }
 
     public void ProcessShoot(bool isShooting) {

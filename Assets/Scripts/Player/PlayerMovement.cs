@@ -34,8 +34,8 @@ public class PlayerMovement : MonoBehaviour {
     private void Start() {
         _rigidbody = GetComponent<Rigidbody>();
         _playerInput = GetComponent<InputManager>();
-        contador=0;
-	score.text = "Score: " + contador;
+        contador = 0;
+	    score.text = "Score: " + contador;
     }
 
     private void FixedUpdate() {

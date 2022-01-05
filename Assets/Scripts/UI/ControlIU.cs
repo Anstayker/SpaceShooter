@@ -8,8 +8,9 @@ using UnityEngine.SceneManagement;
 public class ControlIU : MonoBehaviour {
 	
 	public void Exit() {
-		Debug.Log("Cerrar aplicacion");
-		Application.Quit();
+		Debug.Log("Exit");
+		SceneManager.LoadScene("MainMenu");
+		Time.timeScale = 1f;
     }
 
         public void RestartGame() {

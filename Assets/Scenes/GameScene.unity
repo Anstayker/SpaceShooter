@@ -808,7 +808,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1381,6 +1381,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 477488387}
     m_Modifications:
+    - target: {fileID: 2905323692194212320, guid: 4ccdd6232359cfd48b9d9458dbf5a076, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6315109513449370484, guid: 4ccdd6232359cfd48b9d9458dbf5a076, type: 3}
       propertyPath: m_Name
       value: SpaceShip Spawner
@@ -2378,6 +2382,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 477488387}
     m_Modifications:
+    - target: {fileID: 2905323692194212320, guid: 4ccdd6232359cfd48b9d9458dbf5a076, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6315109513449370484, guid: 4ccdd6232359cfd48b9d9458dbf5a076, type: 3}
       propertyPath: m_Name
       value: Meteor Spawner

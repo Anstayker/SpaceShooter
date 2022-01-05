@@ -8,12 +8,14 @@ public class PlayerShot : MonoBehaviour {
     [SerializeField] private float _durationShot = 5.0f;
     [SerializeField] ParticleSystem[] particleSystems;
     private AudioSource _audioSource;
+    private bool _isShooting = false;
   
     void Start() {                   
             _audioSource = GetComponent<AudioSource>();        
     }
 
     public void ProcessShoot(bool isShooting) {
+        _isShooting = isShooting;
         foreach (ParticleSystem gun in particleSystems) {
             if (isShooting) {
                 gun.Play();
@@ -33,7 +35,8 @@ public class PlayerShot : MonoBehaviour {
         if(other.gameObject.GetComponent<PowerUp>()) {
             StartCoroutine(shotDuration());
             particleSystems[2].gameObject.SetActive(true);
-            particleSystems[3].gameObject.SetActive(true);                        
+            particleSystems[3].gameObject.SetActive(true);
+            ProcessShoot(_isShooting);                        
             Destroy(other.gameObject);
         }
     }

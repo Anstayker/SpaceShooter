@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame() {
 		Debug.Log("Play");
-		SceneManager.LoadScene("GameScene");
+		SceneManager.LoadScene("Level");
 		Time.timeScale = 1f;
    }
    public void Credits() {
